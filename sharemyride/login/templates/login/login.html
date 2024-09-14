@@ -1,0 +1,22 @@
+{% extends 'temp/index.html' %}
+{% block base %}
+<form method="post">
+    {% csrf_token %}
+	<h1 align="center">LOGIN</h1>
+	<table align="center">
+		<tr>
+			<td>Username</td>
+			<td><input type="text" name="us" class="form-control" required="">
+		</tr>
+		<tr>
+			<td>password</td>
+			<td><input type="password" name="ps" class="form-control" required="">
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="submit" name="" value="LOGIN" class="button btn-danger">
+			</td>
+		</tr>
+	</table>
+</form>
+{% endblock %}

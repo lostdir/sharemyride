@@ -1,0 +1,141 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+<script type="text/javascript">
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+    </script>
+
+
+<style>
+    .star-rating {
+  border:solid 1px #ccc;
+  display:flex;
+  flex-direction: row-reverse;
+  font-size:1.5em;
+  justify-content:space-around;
+  padding:0 .2em;
+  text-align:center;
+  width:5em;
+}
+
+.star-rating input {
+  display:none;
+}
+
+.star-rating label {
+  color:#ccc;
+  cursor:pointer;
+}
+
+.star-rating :checked ~ label {
+  color:#f90;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color:#fc0;
+}
+
+
+            input,select {
+
+          font-size: 16px;
+           border: none;
+                width: 100%;
+                border-radius: 8px;
+                border-bottom: 1px solid #0d8ebd;
+                padding: 15px 24px;
+}
+
+        fieldset
+{
+    border-left:1px solid deepskyblue;
+            {#border-bottom:1px solid deepskyblue;#}
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    border-radius:8px;
+}
+
+input[type=submit],button{
+    font-size: 15px;
+    padding: 8px 20px;
+    border-radius: 8px;
+    color: #4ACCD1;
+    width: 20%;
+    alignment: center;
+  border-bottom: 1px solid #0d8ebd;}
+
+
+input[type=reset]{font-size: 20px;
+    padding: 10px 24px;
+    border-radius: 8px;
+    color: #4ACCD1;
+    width: 100%;
+  border-bottom: 1px solid #0d8ebd;}
+
+legend{
+    color: #0d8ebd;
+    font-weight: bold;
+    float: left;
+}
+
+select{width: 100%;
+
+}
+
+
+
+
+
+        </style>
+
+
+
+
+
+
+<center>
+
+<form method="post">
+    {% csrf_token %}
+    <h1>RATING</h1>
+	<TABLE>
+
+<tr>
+    <td>
+        USER
+    </td>
+    <td><select name="us" class="form-control">
+        <option>----------select------------</option>
+        {% for i in ok %}
+        <option value="{{ i.user_id }}">{{ i.name }}</option>
+        {% endfor %}
+    </select> </td>
+</tr>
+     <tr>
+         <td>Rating</td>
+
+<td>
+
+    <div class="star-rating">
+  <input type="radio" id="5-stars" name="rating" value="5" />
+  <label for="5-stars" class="star">&#9733;</label>
+  <input type="radio" id="4-stars" name="rating" value="4" />
+  <label for="4-stars" class="star">&#9733;</label>
+  <input type="radio" id="3-stars" name="rating" value="3" />
+  <label for="3-stars" class="star">&#9733;</label>
+  <input type="radio" id="2-stars" name="rating" value="2" />
+  <label for="2-stars" class="star">&#9733;</label>
+  <input type="radio" id="1-star" name="rating" value="1" />
+  <label for="1-star" class="star">&#9733;</label>
+</div>
+</td>
+			</tr>
+
+		</TABLE>
+    <br><br>
+<input type="SUBMIT" name="ADD" VALUE="ADD">
+	</FORM>
+</center>
+{% endblock %}

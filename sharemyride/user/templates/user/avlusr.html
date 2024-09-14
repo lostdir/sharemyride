@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h2 align="center">AVALIABLE USERS</h2>
+
+	<table class="table table-bordered" align="center">
+		<tr>
+
+			<th>NAME</th>
+			<th>date</th>
+			<th>time</th>
+            <th>Location</th>
+
+
+			
+		</tr>
+{% for i in objval %}
+
+
+
+		<tr>
+			<td>{{ i.user_id }}</td>
+			<td>{{ i.date }}</td>
+			<td>{{ i.time }}</td>
+            <td>{{ i.to_id }}</td>
+		</tr>
+
+		{% endfor %}
+	</table>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#	<title></title>#}
+{#</head>#}
+{#<body>#}
+{% extends 'temp/admin.html' %}
+{% block base %}
+	<h1 align="center">Manage Vehicle</h1>
+	<table align="center" class="table table-bordered">
+		<tr>
+			<th>name</th>
+			<th>model</th>
+			<th>registration number</th>
+			<th>user</th>
+			<th></th>
+			<th></th>
+		</tr>
+         {% for i in objval %}
+		<tr>
+			<td>{{ i.vehicle_name }}</td>
+			<td>{{ i.model }}</td>
+			<td>{{ i.registered_no }}</td>
+			<td>{{ i.user_id }}</td>
+			<td><a href="{% url 'add' idd=i.vehicle_id %}">Approve</a></td>
+			<td><a href="{% url 'remove' idd=i.vehicle_id %}">Reject</a></td>
+        </tr>
+		{% endfor %}
+	</table>
+{% endblock %}
+{#</body>#}
+{#</html>#}

@@ -1,0 +1,37 @@
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#	<title></title>#}
+{#</head>#}
+{#<body>#}
+{% extends 'temp/admin.html' %}
+{% block base %}
+	<h1 align="center">Manage user</h1>
+	<table align="center" class="table table-bordered">
+		<tr>
+			<th>name</th>
+			<th>Address</th>
+			<th>Phone</th>
+			<th>email</th>
+			<th>license</th>
+			<th>gender</th>
+			<th>age</th>
+			<th></th>
+			<th></th>
+		</tr>
+         {% for i in objval %}
+		<tr>
+			<td>{{i.name}}</td>
+			<td>{{i.address}}</td>
+			<td>{{i.phone}}</td>
+			<td>{{i.email}}</td>
+             <td>{{i.license}}</td>
+			<td>{{i.gender}}</td>
+			<td>{{i.age}}</td>
+			<td><a href="{% url 'approve' idd=i.user_id %}">Approve</a></td>
+             <td><a href="{% url 'reject' idd=i.user_id %}">Reject</a></td>
+		{% endfor %}
+	</table>
+{% endblock %}
+{#</body>%}"#}
+{#</html>#}

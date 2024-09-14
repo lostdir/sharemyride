@@ -1,0 +1,34 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+	<h1 align="center">BOOKING STATUS</h1>
+
+	<table align="center" class="table table-bordered">
+		<tr>
+
+			<th>booking id</th>
+			<th>date</th>
+			<th>time</th>
+			<TH>route</TH>
+			<TH>status</TH>
+
+			
+		</tr>
+        {% for i in objval %}
+		<tr>
+			<td>{{ i.booking_id }} </td>
+			<td>{{ i.date}} </td>
+			<td> {{ i.time }}</td>
+			<td> {{ i.route.route }}</td>
+{#			<td>{{ i.payment }} </td>#}
+			<td>{{ i.status }} </td>
+        <td><a href="{% url 'payee' idd=i.booking_id %}" class="btn btn-primary">PAYMENT</a> </td>
+        <td><a href="{% url 'cnckll' idd=i.booking_id %}" class="btn btn-danger">CANCEL</a> </td>
+
+
+			
+	    </tr>
+
+        {% endfor %}
+	</table>
+
+{% endblock %}

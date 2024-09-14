@@ -1,0 +1,21 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+<h1 align="center">replay</h1>
+	<table align="center" class="table table-bordered">
+		<tr>
+			<th>reply</th>
+			<th>date</th>
+			<th>time</th>
+
+
+		</tr>
+         {% for i in objval %}
+		<tr>
+			<td>{{i.reply}}</td>
+			<td>{{i.date}}</td>
+			<td>{{i.time}}</td>
+        </tr>
+        {% endfor %}
+
+	</table>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'temp/user.html'%}
+{% block base %}
+<h1 align="center">USER</h1>
+<table align="center" class="table table-bordered">
+	<tr>
+{#		<td>USERNAME</td>#}
+
+		<th>NAME</th>
+		<th>PHONE</th>
+{#		<td>AGE</td>#}
+
+	</tr>
+   {% for i in ok %}
+	<tr>
+{#		<td>{{ i.w_id }}</td>#}
+		<td>{{ i.username }}</td>
+		<td>{{ i.phone }}</td>
+{#		<td>{{ i.age }}</td>#}
+		<td>
+			<a href="{% url 'chat1' idd=i.user_id %}" class="btn btn-primary">CHAT</a>
+
+		</td>
+	</tr>
+	{% endfor %}
+</table>
+</body>
+</html>
+{% endblock %}

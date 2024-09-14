@@ -1,0 +1,24 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+
+	<h1 align="center">CHAT</h1>
+	<table align="center" class="table table-bordered">
+		<th>USERNAME</th>
+        <th>MESSAGE</th>
+		<th>DATE</th>
+		<th>TIME</th>
+        <th></th>
+        {% for i in ok %}
+        <tr>
+        <td>{{ i.fromm.name }}</td>
+		<td>{{ i.chat }}</td>
+		<td>{{ i.date }}</td>
+		<td>{{ i.time }}</td>
+            <td><a href="{% url 'chat22' idd=i.fromm_id%}" class="btn btn-primary">Reply</a></td>
+
+        </tr>
+        {% endfor %}
+	</table>
+
+
+{% endblock %}

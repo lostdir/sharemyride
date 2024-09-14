@@ -1,0 +1,32 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+	<h2>BOOKING REQUEST</h2>
+
+	<table class="table table-bordered">
+		<tr>
+
+			<th>booking id</th>
+			<th>time</th>
+			<th>location</th>
+{#			<TH>destination</TH>#}
+			<TH>Username</TH>
+
+
+
+			
+		</tr>
+         {% for i in objval %}
+		<tr>
+			<td>{{i.booking_id }}</td>
+			<td>{{ i.time }} </td>
+			<td> {{ i.route.route }}</td>
+{#			<td> {{ i.to_id }}</td>#}
+			<td> {{ i.user.name }}</td>
+
+			
+			<td><a href="{% url 'booked' idd=i.booking_id %}" class="btn btn-danger">Approve</a></td>
+            <td><a href="{% url 'bookreject' idd=i.booking_id %}" class="btn btn-danger">Reject </a> </td>
+	    </tr>
+        {% endfor %}
+	</table>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+	<h2 align="center">ADD PAYMENT DETAILS </h2>
+<form METHOD="post">
+    {% csrf_token %}
+	<table align="center" class="table table-bordered">
+	<tr>
+		<td>PAYMENT MODE</td>
+		<td><select name="pd" class="form-control">
+            <option value="ONLINE">ONLINE</option>
+            <option value="CASH IN HAND">CASH IN HAND</option>
+        </select>
+		</td>
+	</tr>
+	<tr>
+
+		<td>AMOUNT</td>
+		<td><input type="text" name="DATE" class="form-control">
+		</td>
+	</tr>
+
+
+
+	<tr>
+        <td></td>
+		<td><input type="submit"  value="submit" class="button btn-danger" ></td>
+    </tr>
+
+    </table>
+</form>
+{% endblock %}

@@ -1,0 +1,27 @@
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#	<title></title>#}
+{#</head>#}
+{#<body>#}
+{% extends 'temp/admin.html' %}
+{% block base %}
+<form METHOD="post">
+    {% csrf_token %}
+<table align="center">
+	<h1 align="center">alert</h1>
+		<tr>
+			<td>alert </td>
+			<td><input type="textarea" name="alert"class="form-control" required=""></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="submit" name="" value="ADD" class="button btn-danger">
+			</td>
+		</tr>
+</table>
+    </form>
+{% endblock %}
+{#</body>#}
+{##}
+{#</html>#}

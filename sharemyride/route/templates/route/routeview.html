@@ -1,0 +1,32 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+	<h2 align="center">UPDATE ROOT</h2>
+
+	<table class="table table-bordered" align="center">
+		<tr>
+
+			<th>LATITUDE</th>
+			<th>LONGITUDE</th>
+			<th>DATE</th>
+			<TH>TIME</TH>
+			<TH>ROUTE</TH>
+
+
+
+			
+		</tr>
+         {% for i in ok %}
+		<tr>
+			<td>{{i.latitude }}</td>
+			<td>{{ i.longitude }} </td>
+			<td> {{ i.date }}</td>
+			<td> {{ i.time }}</td>
+			<td> {{ i.route }}</td>
+
+			
+			<td><a href="{% url 'dellllllllll' idd=i.route_id %}" class="btn btn-danger">DELETE</a></td>
+{#            <td><a href="{% url 'bookreject' idd=i.booking_id %}" class="button btn-danger">Reject </a> </td>#}
+	    </tr>
+        {% endfor %}
+	</table>
+{% endblock %}

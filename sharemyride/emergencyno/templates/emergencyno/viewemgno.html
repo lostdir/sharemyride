@@ -1,0 +1,20 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+	<h2 align="center">EMERGECY NUMBERS</h2>
+
+	<table class="table table-bordered" align="center">
+		<tr>
+
+			<th>NAME</th>
+			<th>NUMBER</th>
+
+		</tr>
+         {% for i in objval %}
+		<tr>
+			<td>{{i.name}}</td>
+			<td>{{i.emg_no}}</td>
+        </tr>
+		{% endfor %}
+	</table>
+
+{% endblock %}

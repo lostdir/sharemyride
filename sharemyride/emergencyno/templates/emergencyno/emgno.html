@@ -1,0 +1,30 @@
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#	<title></title>#}
+{#</head>#}
+{#<body>#}
+{% extends 'temp/admin.html' %}
+{% block base %}
+<form method='POST'>
+    {% csrf_token %}
+<table align="center">
+	<h1 align="center">Emergency number</h1>
+      <tr>
+			<td>name</td>
+			<td><input type="text" name="name" class="form-control" required=""></td>
+		</tr>
+
+    <tr>
+			<td>emergency number</td>
+			<td><input type="text" name="number" class="form-control" required=""></td>
+		</tr>
+
+		<tr>
+			<td></td>
+			<td><input type="submit" name="" value="ADD" class="button btn-danger">
+			</td>
+		</tr>
+</table>
+    </form>
+{% endblock %}

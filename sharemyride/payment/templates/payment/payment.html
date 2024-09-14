@@ -1,0 +1,25 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+	<h1 align="center">PAYMENT</h1>
+	<table align="center"  class="table table-bordered align-content-center">
+		<tr>
+			<th>account name</th>
+			<th>Payment mode</th>
+			<th>amount</th>
+{#			<th></th>#}
+		
+
+		</tr>
+        {% for i in ok %}
+		<tr>
+			<td>{{ i.book.user.name }}</td>
+			<td>{{ i.type }}</td>
+			<td>{{ i.payment }}</td>
+        </tr>
+    {% endfor %}
+	
+			
+	
+		
+	</table>
+{% endblock %}

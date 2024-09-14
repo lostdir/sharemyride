@@ -1,0 +1,49 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+	<center>
+		<form METHOD="post">
+            {% csrf_token %}
+				<table>
+					<h3>VEHICLE REGISTRATION </h3>
+
+					<tr>
+						<td>
+							VEHICLE NAME
+
+						</td>
+						<td>
+							<input type="text" name="vehiclename" class="form-control" required="">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							MODEL
+
+						</td>
+						<td>
+							<input type="text" name="model" class="form-control" required="">
+						</td>
+					</tr>
+					<TR>
+						<td>REGISTERED NO:</td>
+						<TD><input type="text" name="registeredno" class="form-control" required=""></TD>
+					</TR>
+					<tr>
+						<td>
+							TYPE:
+						</td>
+						<td>
+							<input type="text" name="type" class="form-control" required="">
+						</td>
+						</tr>
+
+						<tr>
+				<td></td>
+				<td><input type="submit" name="register" value="REGISTER"></td>
+			</tr>
+
+
+				</table>
+			</form>
+	</center>
+{% endblock %}
